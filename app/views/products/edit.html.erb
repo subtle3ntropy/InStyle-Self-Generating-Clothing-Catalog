@@ -1,0 +1,25 @@
+<h1>Edit Product</h1>
+
+
+
+<%= form_for @product, :html => {:multipart => true} do |f| %>
+	<%= f.label :name %>
+	<%= f.text_field :name %><br />
+
+	<%= f.label :description %>
+	<%= f.text_area :description %> <br />
+
+	<%= f.label :price %>
+	<%= f.text_field :priced %><br />
+	<%= f.label :main_image %>
+	<%= f.file_field :main_image %>
+	<%= f.label :image1 %>
+	<%= f.file_field :image1 %>
+	<%= f.label :image2 %>
+	<%= f.file_field :image2 %><br />
+	<%= f.label :image3 %>
+	<%= f.file_field :image3 %>
+	<%=f.submit %>
+
+
+<% end %>

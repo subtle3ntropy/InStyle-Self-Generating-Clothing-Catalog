@@ -1,0 +1,26 @@
+
+<div id="createUserMain">
+	<img src="<%= asset_path('usercreate1.jpg') %>" style ="
+	width: 300px; height: 100%; float:left;">
+	<img src="<%= asset_path('usercreate2.jpg') %>" style ="
+	width: 300px; height: 100%; float:right;">
+	<div id="createUserMain2">
+		<h2>New to InStyle.com? Create an Account</h2>
+		<i><p style="color: blue;">Receive a coupon for 15% off on your first purchase!<p></i>
+
+<%= form_for @user do |f| %>
+	<b><%= f.label :username %>:&nbsp;
+	<%= f.text_field :username %><br><br>
+
+	<%= f.label :email %>:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= f.email_field :email %><br><br>
+
+	<%= f.label :password %>:&nbsp;&nbsp;
+	<%=f.password_field :password %><br><br></b>
+	<%=f.submit %>
+	<% end %>
+
+
+
+	</div>
+</div>

@@ -1,0 +1,437 @@
+body, html {
+	height:100%;
+	width: 1400px;
+	margin-right: auto;
+	margin-left: auto;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+.top-navigation {
+	padding-bottom: 20px;
+	min-width: 1200px;
+	margin-left: auto;
+	margin-right:auto;
+	height:48px;
+	margin-bottom:80px;
+  	border-bottom: 3px solid rgba(204, 102, 102, .7);
+  	background-color: white;
+ 	
+}
+
+.top-navigation p{	
+	color: #0E9100;	
+}
+
+#what {
+	color: brown;
+	margin-top: 30px;
+	margin-left: 100px;
+	float:left;
+}
+.top-navigation form {
+    font-family: 'Roboto', sans-serif;
+    color: #339900;
+    float:right;
+    margin-top: 20px;
+    margin-right: 15px;
+  	font-size:15px;
+}
+
+.field input {
+  width:100px;
+}
+
+.button{
+	width:50px;
+}
+
+.MainImg {
+	height: 490px;
+	width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 5px 5px 20px #888888;
+}
+
+.ProductsMain{
+	
+	margin-top: 50px;
+	min-width: 1400px;
+	height: 200px;
+	margin-bottom: 100px;
+
+
+}
+
+.ProductsMain img{
+	box-shadow: 5px 5px 20px #888888;
+	cursor: default;
+}
+
+footer {
+
+	text-align: center;
+	margin-bottom: 20px;
+	height:20px;
+	font-size: 8px;
+  	max-width:800px;
+  	margin-top: 20px;
+  	margin: 0 auto;
+}
+
+
+
+.ReviewsMain {
+	margin-right: auto;
+	margin-left: auto;
+	width: 800px;
+	height:600px;
+	box-shadow: 5px 5px 20px #888888;
+	padding: 10px 10px;
+}
+
+.ReviewsMain h4{
+	text-align: center;
+	color: #990000 ;
+}
+
+.Reviews {
+	width:97%;
+	height: 500px;
+	padding: 10px 10px;
+	border: solid 2px rgba(204, 102, 102, .4);
+	overflow: auto;
+}
+
+ul.enlarge{
+list-style-type:none; /*remove the bullet point*/
+margin-left:0;
+float:left;
+}
+ul.enlarge li{
+display:inline-block; /*places the images in a line*/
+position: relative;
+z-index: 0; /*resets the stack order of the list items - later we'll increase this*/
+margin:10px 0px 0 20px;
+}
+ul.enlarge img{
+background-color:#eae9d4;
+padding: 6px;
+-webkit-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+-moz-box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+box-shadow: 0 0 6px rgba(132, 132, 132, .75);
+-webkit-border-radius: 4px; 
+-moz-border-radius: 4px; 
+border-radius: 4px; 
+}
+ul.enlarge span{
+position:absolute;
+width: 500px;
+left: -9999px;
+background-color:#eae9d4;
+padding: 10px;
+font-family: 'Droid Sans', sans-serif;
+font-size:.9em;
+text-align: center; 
+color: #495a62; 
+-webkit-box-shadow: 0 0 20px rgba(0,0,0, .75));
+-moz-box-shadow: 0 0 20px rgba(0,0,0, .75);
+box-shadow: 0 0 20px rgba(0,0,0, .75);
+-webkit-border-radius: 8px; 
+-moz-border-radius: 8px; 
+border-radius:8px;
+}
+ul.enlarge li:hover{
+position: absolute;
+z-index: 9999;
+
+}
+ul.enlarge span img{
+padding:2px;
+background:#ccc;
+cursor:pointer;
+}
+ul.enlarge li:hover span{ 
+top: -300px; /*the distance from the bottom of the thumbnail to the top of the popup image*/
+left: -20px; /*distance from the left of the thumbnail to the left of the popup image*/
+}
+ul.enlarge li:hover:nth-child(2) span{
+left: -100px; 
+
+}
+ul.enlarge li:hover:nth-child(3) span{
+left: -200px; 
+
+}
+/**IE Hacks - see http://css3pie.com/ for more info on how to use CS3Pie and to download the latest version**/
+ul.enlarge img, ul.enlarge span{
+behavior: url(pie/PIE.htc); 
+
+}
+
+.stars {
+	width: 130px;
+	height: 30px;
+}
+
+.enlarge {
+	padding-left: 0px;
+
+}
+
+
+.enlarge a{
+	display: inline-block;
+    vertical-align: middle;
+}
+
+
+
+#createUserMain {
+	width:1000px;
+	height:600px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: 10px 10px;
+	
+	background-image: url("userbg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#createUserMain2 {
+	color:#383838 ;
+	width:400px;
+	height:400px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 100px;
+	background-color: rgba(200,200,200,.6);
+	padding-left:20px;
+	
+}
+
+
+#userInt {
+	padding: 10px 10px;
+	float:right;
+	margin-right: 50px;
+	margin-top: -6px;
+	
+}
+
+a #userInt:hover {
+padding: 5px 5px;
+box-shadow: 5px 5px 20px #888888;
+
+}
+
+
+
+#productTop {
+	border-radius: 25px;
+	width:1000px;
+	height:500px;
+	padding: 20px 20px;
+	background-color: #F0F0F0;
+	margin-bottom: 25px;
+	box-shadow: 5px 5px 20px #888888;
+
+}
+
+
+.productBody {
+	width:1000px;
+	margin-left: auto;
+	margin-right: auto;
+
+}
+
+#ReviewsOnProductPage {
+	box-shadow: 5px 5px 20px #888888;
+	margin-top: 25px;
+	font-size: 12px;
+	border: solid 1px #E8E8E8 ;
+	border-radius: 25px;
+	padding: 20px 20px;
+	height: 400px;
+	overflow: auto;
+}
+
+
+#PerReview {
+	background-color: rgba(216,216,216,.6);
+	border-radius: 25px;
+	padding: 1px 10px;
+	margin-bottom: 10px;
+
+}
+
+#productImage {
+	float: left;
+	margin-right: 100px;
+	
+
+}
+
+
+.hrlength_all {
+	width: 50%;
+	position: relative;
+}
+
+.ProductBackgroundAll {
+	background-color: #FAE8D7;
+	text-align: center;
+	width: 700px;
+	margin-right: auto;
+	margin-left: auto;
+	border-radius: 25px;
+	overflow: auto;
+	height:550px;
+}
+
+.PerProduct {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
+#postArea {
+	margin-left: auto;
+	margin-right: auto;
+
+	padding:10px 10px;
+	
+	
+}
+
+#commentsTotal {
+	margin-top: 50px;
+	border: solid 2px #B8B8B8;
+	overflow: auto;
+	width:800px;
+	height:300px;
+	padding: 10px 10px;
+	box-shadow: 5px 5px 20px #888888;
+}
+
+.img_large {
+
+	margin-left: 20px;
+	width: 400px;
+	height: 400px;
+}
+.img_small {
+	width: 150px;
+	height: 200px;
+}
+
+.img_grand {
+	margin-left: 100px;
+	width:800px;
+	height:900px;
+}
+.ProductNewHead {
+	text-align: left;
+	margin-left: 25px;
+}
+
+.ProductUpload {
+	padding: 20px 20px;
+	background-color: #FAE8D7;
+	text-align: left;
+	width: 700px;
+	margin-right: auto;
+	margin-left: 25px;
+	border-radius: 25px;
+	overflow: auto;
+	height:550px;
+}
+
+#cartBody {
+	margin-left: 50px;
+	padding: 20px 20px;
+	width: 70%;
+	height:500px;
+	box-shadow: 5px 5px 20px #888888;
+	margin-left: auto;
+	margin-right: auto;
+	
+}
+
+#cartItems .img_small {
+	float: right;
+	margin-right: 200px;
+
+}
+
+#cartItems {
+	width:90%;
+	overflow: auto;
+	height:450px;
+	box-shadow: 5px 5px 20px #0033FF;
+	padding :10px 10px;
+}
+
+
+a:hover {
+	text-decoration: underline;
+}
+
+#ViewProducts a{
+	margin-left: 21%;
+	padding-left: 300px;
+}
+
+* { margin: 0; padding: 0; }
+body { font: 14px/1.4 Georgia, serif; }
+
+h1 { font: bold 32px Helvetica, Sans-Serif; letter-spacing: -1px; margin: 0 0 15px 0; }
+
+article, aside, figure, footer, header, hgroup,
+menu, nav, section { display: block; }
+
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+#page-wrap { width: 1200px; margin: 60px auto; }
+
+.image-gallery { margin: 20px 0 25px 0; }
+
+figure { 
+ 
+  float: left; 
+  margin: 0 20px 0 0; 
+  background: white;
+  border: 10px solid white; 
+  -webkit-box-shadow: 0 3px 10px #ccc; 
+  -moz-box-shadow: 0 3px 10px #ccc;
+  -webkit-transform: rotate(5deg); 
+  -moz-transform: rotate(5deg);
+  -webkit-transition: all 0.7s ease; 
+  -moz-transition: all 1s ease;
+  position: relative;
+}
+
+
+figure img { 
+  width: 100%; /* Scale down */
+}
+
+figure:hover {
+    -webkit-transform: rotate(-1deg); -moz-transform: rotate(1deg);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+}
+
+figure:focus {
+    outline: none;
+    -webkit-transform: rotate(-3deg) scale(3.5); -moz-transform: rotate(-3deg) scale(3.5);
+    -webkit-box-shadow: 0 3px 10px #666; -moz-box-shadow: 0 3px 10px #666;
+    z-index: 9999;
+    
+}
+

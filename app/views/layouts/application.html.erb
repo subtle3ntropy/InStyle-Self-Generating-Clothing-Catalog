@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+
+<body><header>
+		<nav class="top-navigation";>
+			<a href="/"><img src="<%= asset_path('logo.png') %>" style="margin-top:-2px; margin-left:110px; float:left; width:270px;
+				"></a>
+				<p id="what"><b>From Top Brands Around Asia</b><br>FREE Worldwide Shipping On Orders Over $25 USD</p>
+					<div id="userInt">
+	    
+					<% if current_user %>
+						<b><%= "Welcome #{current_user.username}!" %><br>
+						<a><%= link_to "My Cart", cart_path(current_cart.id) %> (<%= current_cart.line_items.size %>) <br></a>
+			 
+						<a><%= link_to 'Sign out', logout_path, method: :delete %></a>
+					</div>
+					<% else %>	
+		<div class="field">	
+			<%= form_tag('/signin', method: :post) do |f| %>
+			<b><%= link_to "SignUp | SignIn", new_user_path %></b>
+			<%= label_tag :email %>
+			<%= email_field_tag :email  %>
+			<%= label_tag :password %>
+			<%= password_field_tag :password %>
+			<%= submit_tag "Log in", :style => 'width: 50px' %>
+		</div>
+
+					<% end %>
+					<% end %>
+			    <% if current_admin %>
+	    	
+	    		<%= link_to 'sign out admin', destroy_admin_session_path, method: :delete %>
+	    	
+	    		<% end %>
+			 </form>
+			 
+		
+       </nav>    
+   </header>
+  
+<body>
+	
+
+<%= yield %>
+ <footer>
+   	<p>COPYRIGHT © 2015 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+   	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+   	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+   	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+   	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+   	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+   </footer>
+
+</body>
+</html>

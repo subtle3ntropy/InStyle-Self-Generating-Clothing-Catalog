@@ -1,0 +1,10 @@
+<h1>Reviews</h1>
+
+<% @reviews.each do |review| %>
+
+	<h1> <%= link_to review.title, review_path(review.id) %> </h1>
+	<p><%= review.body %></p>
+	<p><%= review.score %> User found this review helpful</p>
+	<p><%= link_to "Like!", like_product_reviews_path(review.id), method: :put %></p>
+
+	<% end %>

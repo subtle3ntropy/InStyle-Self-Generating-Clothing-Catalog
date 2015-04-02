@@ -1,0 +1,80 @@
+
+
+<div class="MainImg">
+<img src="<%= asset_path('main.png') %>" style ="
+width: 100%; height: 100%;">
+</div>
+<h3 style="
+	margin-top: 50px;
+	margin-right: auto;
+	margin-left: auto;
+	width:100%;
+	text-align: center;
+	color:#FF0033;
+	border:2px solid #006633;
+	
+	background-color: rgba(51, 255, 102, .3);"
+	>New Arrivals!</h3>
+<div id="scroll">
+<div class="ProductsMain">
+	
+
+
+	<div style="margin-left: 200px;">
+	<% @product.order(created_at: :desc).first(5).each do |product| %>
+
+	<ul class="enlarge">
+		
+		<li><%= link_to (image_tag product.main_image.url, :class => "img_small"), product_path(product.id) %><span><%= link_to (image_tag product.main_image.url, :class => "img_large"), product_path(product.id) %><br /><p 		class="TextWidth"><%= product.name %><br><%= product.description %><br>US$ <%= product.priced %></p></span>
+		</li>
+
+
+	</ul>
+<% end %>
+	</div>
+
+</div>
+</div>
+<b><p id="ViewProducts"><%= link_to "View all our products!", products_path %></p></b><br>
+
+<div class="ReviewsMain"> <h2><ul><i>Newest reviews</i></ul></h2>
+
+	<div class="Reviews"><h1>
+		<% @reviews.order(created_at: :desc).each do |review| %>
+
+	<h3> <%= link_to review.title, product_path(review.product_id) %></h3>
+	<h5> <%= review.user.username %>'s review of <%= review.product.name  %></h5>
+	<%= image_tag review.product.main_image.url(:thumb) %>
+	<% if review.score == 5 %>
+		<img class="stars" src="<%= asset_path('5stars.png') %>" />
+	<% elsif review.score == 4 %>
+		<img class="stars" src="<%= asset_path('4stars.png') %>" />
+	<% elsif review.score == 3 %>
+		<img class="stars" src="<%= asset_path('3stars.png') %>" />
+	<% elsif review.score == 2 %>
+		<img class="stars" src="<%= asset_path('2stars.jpg') %>" />
+	<% elsif review.score == 1 %>
+		<img class="stars" src="<%= asset_path('1star.jpeg') %>" />
+
+		<% end %><br>
+	
+		<%= review.body %></p><p><%= link_to "Like this review!", like_product_reviews_path(review.id), method: :put %>
+		<% if review.score == 1 %>
+		<%= review.score %> user found this review helpful
+		<% else %>
+		<%= review.score %> users found this review helpful
+		<% end %>
+
+		<p><%= link_to "#{review.comments.size} comment", review_path(review.id) %></p>
+
+		<hr>
+
+		<%end%>
+
+
+	</h1>
+	
+
+
+</div>
+

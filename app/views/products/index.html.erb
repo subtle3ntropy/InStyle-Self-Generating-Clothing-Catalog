@@ -1,0 +1,33 @@
+<h1 style="text-align:center;">All Products</h1>
+
+
+
+<div class="ProductBackgroundAll">
+	<div id="PerProduct">
+	<% @products.order('impressions_count DESC').each do |product| %>
+
+	<%= link_to (image_tag product.main_image.url(:medium)), product_path(product.id) %>
+	<p><%= product.impressionist_count %> views</p>
+
+	<br />
+	<%= link_to product.name, product_path(product.id) %></h1><br />
+
+	<%= product.description %></p><br />
+
+	$<%= product.priced %> 
+
+	<p>
+	<hr />
+		<%=link_to "#{product.reviews.size} Reviews", product_path(product.id) %> </p>
+
+	<hr />
+
+
+
+<% end %>
+
+</div>
+
+
+
+</div>

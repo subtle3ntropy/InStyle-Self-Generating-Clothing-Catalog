@@ -1,0 +1,14 @@
+<fieldset>
+ <%= form_for @review do |f| %>
+ 	<%= f.label :title %>
+ 	<%= f.text_field :title %> <br /><br />
+
+ 	<%= f.label :body %>
+ 	<%= f.text_area :body %> <br />
+ 	<%= f.label :score %>
+ 	<%= f.text_area :score %>
+ 	<%= f.submit %>
+
+
+ 	<% end %>
+ </fieldset>

@@ -1,0 +1,35 @@
+<h1 class="ProductNewHead">Add Product</h1>
+
+
+<%= form_for @product, :html => {:multipart => true} do |f| %>
+	<div class="ProductUpload">
+		<br />
+		<div><%= f.label :name %>
+			<%= f.text_field :name %></div><br>
+		
+		<div><%= f.label :description %>
+			<%= f.text_area :description %></div>
+		<br />
+		<div><%= f.label :price %>
+			<%= f.text_field :priced %></div>
+		<br />
+		<div><%= f.label :main_image %>
+			<%= f.file_field :main_image %></div>
+		<br />
+		<div><%= f.label :image1 %>
+			<%= f.file_field :image1 %></div>
+		<br />
+		<div><%= f.label :image2 %>
+			<%= f.file_field :image2 %></div>
+		<br />
+		<div><%= f.label :image3 %>
+		<%= f.file_field :image3 %></div>
+		<br/>
+		<%=f.submit %>
+	</div>
+
+
+	
+
+
+<% end %>

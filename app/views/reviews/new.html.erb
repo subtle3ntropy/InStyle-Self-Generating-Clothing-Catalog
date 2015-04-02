@@ -1,0 +1,44 @@
+<h2 style="color:#505050 ">Write your own review!</h2>
+
+
+<% if current_user %>
+ <%= form_for [@product, @review] do |f| %>
+ 	<b><%= f.label :title %>
+ 	<%= f.text_field :title %> <br /><br />
+ 	<%= f.label :body %><br><br />
+ 	<%= f.text_area :body, :size => "100x10" %> <br />
+ 	<%= f.label :score %>
+ 	<%= f.select :score, 1..5 %>
+ 	<%= f.submit %>
+ 	<% end %>
+ 	<% else %>
+ 	<h3 style="color:#FF0000;">You must be logged in to create reviews! <br><%= link_to "Sign up! now to receive 15% off of your first order", new_user_path %></h3>
+ 	<% end %>
+<div id="ReviewsOnProductPage">
+<h3>User Reviews</h3></b>
+<div id="PerReview">
+<% @product.reviews.each do |review| %>
+	
+	<h3><%= link_to review.title, review_path(review.id) %></h3>
+
+			<% if review.score == 5 %>
+		<img class="stars" src="<%= asset_path('5stars.png') %>" />
+	<% elsif review.score == 4 %>
+		<img class="stars" src="<%= asset_path('4stars.png') %>" />
+	<% elsif review.score == 3 %>
+		<img class="stars" src="<%= asset_path('3stars.png') %>" />
+	<% elsif review.score == 2 %>
+		<img class="stars" src="<%= asset_path('2stars.jpg') %>" />
+	<% elsif review.score == 1 %>
+		<img class="stars" src="<%= asset_path('1star.jpeg') %>" />
+
+		
+	<%end%>
+		<p><%= review.body %>
+			<p><%= review.comments.size %> comments </p>
+			<p> Posted <%=time_ago_in_words (review.created_at) %> ago  by <%= review.user.username %></p>
+
+	<% end %>
+
+	</div>
+</div>

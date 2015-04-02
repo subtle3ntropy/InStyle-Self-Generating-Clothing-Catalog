@@ -1,0 +1,81 @@
+
+<div id="page-wrap">
+<div class = "productBody">
+
+</style>
+<div id="productTop">
+
+	<div id="productImage">
+		<h3><%= @product.name %></h3>
+		<%= image_tag @product.main_image.url, :class => "img_large" %>
+	</div><br>
+<div id="productLeft">
+<b><p>Description<p></b>
+
+
+<p style="height: 100px; overflow: auto;"><%= @product.description %></p><br>
+<%= button_to "Add to Cart", line_items_path(:product_id => @product) %>
+
+
+<p> $ <%= @product.priced %> <br><br><b style="color: blue;">Sizing chart<p></b>
+	<ul class="enlarge">
+<li><img src="<%= asset_path('size_chart.jpg')%>" width="150px" height="180px" /><span><img src="<%= asset_path('size_chart.jpg')%>" width="500px" height="400px";  /></span></li>
+</ul>
+</div>
+
+</div>
+	<section class="image-gallery group">
+	<figure tabindex="1">	
+	<%= image_tag @product.image2.url, :class => "img_small" %>
+	</figure>
+	<figure tabindex="1">
+		<%= image_tag @product.image1.url, :class => "img_small" %>
+	</figure>
+	<figure tabindex="1">
+		<%= image_tag @product.image3.url, :class => "img_small" %>
+	</figure>
+	
+	
+	</section>
+	<br />
+	</div>
+	
+
+<%= link_to "Review this product", new_product_reviews_path(@product.id) %>
+<div id="ReviewsOnProductPage">
+<h3>User Reviews</h3>
+<div id="PerReview">
+<% @product.reviews.each do |review| %>
+	
+	<h3><%= link_to review.title, review_path(review.id) %></h3>
+
+			<% if review.score == 5 %>
+		<img class="stars" src="<%= asset_path('5stars.png') %>" />
+	<% elsif review.score == 4 %>
+		<img class="stars" src="<%= asset_path('4stars.png') %>" />
+	<% elsif review.score == 3 %>
+		<img class="stars" src="<%= asset_path('3stars.png') %>" />
+	<% elsif review.score == 2 %>
+		<img class="stars" src="<%= asset_path('2stars.jpg') %>" />
+	<% elsif review.score == 1 %>
+		<img class="stars" src="<%= asset_path('1star.jpeg') %>" />
+
+		
+	<%end%>
+
+		<p><%= review.body %><br />
+			<p> <%=review.score %> Users found this review helpful</p>
+	
+			<p><%= link_to "#{review.comments.size} comment", review_path(review.id) %></p>
+	
+			<p> Posted <%=time_ago_in_words (review.created_at) %> ago  by <%= review.user.username %></p><br />
+
+
+
+
+
+	<% end %>
+
+	</div>
+</div>
+</div>
